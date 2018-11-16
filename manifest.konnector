@@ -52,7 +52,7 @@
   "locales": {
     "fr": {
       "short_description": "Récupère vos relevés de remboursement",
-      "long_description": "<p>Récupère les relévés de remboursement de votre assurance santé complémentaire.</p><br><p>Les documents relatifs au régime obligatoire ne sont pas récupérés.</p><br><p>Si vous avez connecté le compte bancaire avec lequel vous effectuez vos dépenses de santé, ceci activera le suivi de remboursement dans l'application Cozy Banks.</p>",
+      "long_description": "<p>Récupère les relévés de remboursement de votre assurance santé complémentaire.</p><br><p>Si vous avez connecté le compte bancaire avec lequel vous effectuez vos dépenses de santé, ceci activera le suivi de remboursement dans l'application Cozy Banks.</p>",
       "permissions": {
         "bank operations": {
           "description": "Utilisé pour relier les factures à des operations bancaires"
@@ -70,7 +70,7 @@
     },
     "en": {
       "short_description": "Fetch your reimbursment statement",
-      "long_description": "<p>This connector fetches your reimbursement statements for your complementary health insurance.</p> <br><p>The documents related to the compulsory sickness scheme are not fetched.</p> <br><p>If you have connected the bank account with which you make your medical expenses, this will enable refund tracking in the Cozy Banks app.</p>",
+      "long_description": "<p>This connector fetches your reimbursement statements for your complementary health insurance.</p><br><p>If you have connected the bank account with which you make your medical expenses, this will enable refund tracking in the Cozy Banks app.</p>",
       "permissions": {
         "bank operations": {
           "description": "Required to link bank operations to bills"
