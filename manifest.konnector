@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "Humanis",
+  "name": "Humanis Santé",
   "type": "konnector",
   "language": "node",
   "icon": "icon.png",
