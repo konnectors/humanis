@@ -117,9 +117,9 @@ async function fetchFiles() {
   )
     .filter(doc => doc.amount !== '0.00 €')
     .map(doc => {
-      doc.filename = `${doc.date
-        .format('YYYY_MM')
-        .replace('.', ',')}_Humanis.pdf`
+      doc.filename = `${doc.date.format('YYYY_MM').replace('.', ',')}_${
+        doc.amount
+      }€_Humanis.pdf`
       delete doc.date
       delete doc.amount
       return doc
