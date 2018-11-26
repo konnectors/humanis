@@ -14,7 +14,8 @@
   "fields": {
     "login": {
       "type": "text",
-      "exact": 8
+      "min": 8,
+      "max": 8
     },
     "password": {
       "type": "password"
