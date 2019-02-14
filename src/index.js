@@ -194,6 +194,7 @@ function parseReimbursements($) {
     .map(row => {
       const $row = $(row)
       return {
+        type: 'health_costs',
         date: moment(
           $row
             .find('.date')
