@@ -34,7 +34,9 @@ async function start(fields) {
   log('info', 'Fetching pdf bills')
   let files = await fetchFiles()
   files = await saveFiles(files, fields, {
-    contentType: 'application/pdf'
+    contentType: 'application/pdf',
+    sourceAccount: this._account._id,
+    sourceAccountIdentifier: fields.login
   })
   files = await fetchRefsInPdf(files)
 
@@ -55,7 +57,9 @@ async function start(fields) {
   log('info', 'Saving data to Cozy')
   await saveBills(bills, fields, {
     identifiers: ['humanis'],
-    keys: ['vendorRef']
+    keys: ['vendorRef'],
+    sourceAccount: this._account._id,
+    sourceAccountIdentifier: fields.login
   })
 }
 
