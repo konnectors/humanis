@@ -127,6 +127,7 @@ async function fetchFiles() {
 }
 
 async function fetchDetails(doc) {
+  /* eslint-disable require-atomic-updates */
   const $ = await request(baseUrl + doc._detailsUrl)
   delete doc._detailsUrl
   doc.beneficiary = $('.group-name')
