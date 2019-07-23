@@ -80,9 +80,8 @@ async function linkBillsWithFiles(bills, files) {
 async function fetchRefsInPdf(files) {
   for (let file of files) {
     const text = await getPdfText(file.fileDocument._id)
-    file.refs = text
-      .match(/([A-Z] \d{2} \d{3} \d{5})+/g)
-      .map(ref => ref.replace(/ /g, ''))
+    const matches = text.match(/([A-Z] \d{2} \d{3} \d{5})+/g)
+    file.refs = matches ? matches.map(ref => ref.replace(/ /g, '')) : []
   }
   return files
 }
@@ -92,7 +91,9 @@ async function getPdfText(fileId) {
   const buffer = await response.buffer()
   const document = await pdfjs.getDocument(buffer)
   const page = await document.getPage(1)
-  return (await page.getTextContent()).items.map(doc => doc.str).join(' ')
+  const items = (await page.getTextContent()).items
+
+  return items ? items.map(doc => doc.str).join(' ') : []
 }
 
 async function fetchFiles() {
