@@ -39,7 +39,7 @@
   "dependencies": {
     "cozy-konnector-libs": "4.34.4",
     "moment": "2.26.0",
-    "pdfjs-dist": "2.3.200"
+    "pdfjs-dist": "2.4.456"
   },
   "devDependencies": {
     "copy-webpack-plugin": "6.0.1",
