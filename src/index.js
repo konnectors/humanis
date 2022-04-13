@@ -135,12 +135,7 @@ async function fetchDetails(doc) {
   /* eslint-disable require-atomic-updates */
   const $ = await request(baseUrl + doc._detailsUrl)
   delete doc._detailsUrl
-  doc.beneficiary = $('.group-name')
-    .text()
-    .trim()
-    .split(' ')
-    .slice(1)
-    .join(' ')
+  doc.beneficiary = $('.group-name').text().trim().split(' ').slice(1).join(' ')
 
   const details = scrape(
     $,
@@ -201,24 +196,11 @@ function parseReimbursements($) {
       const $row = $(row)
       return {
         type: 'health_costs',
-        date: moment(
-          $row
-            .find('.date')
-            .text()
-            .trim(),
-          'DD/MM/YY'
-        ).toDate(),
+        date: moment($row.find('.date').text().trim(), 'DD/MM/YY').toDate(),
         groupAmount: parseFloat(
-          $row
-            .find('.montant span.text')
-            .text()
-            .trim()
-            .replace(' €', '')
+          $row.find('.montant span.text').text().trim().replace(' €', '')
         ),
-        vendorRef: $row
-          .find('.dossier span.text')
-          .text()
-          .trim(),
+        vendorRef: $row.find('.dossier span.text').text().trim(),
         _detailsUrl: $row.find('.details a').attr('href'),
         vendor: 'Humanis'
       }
